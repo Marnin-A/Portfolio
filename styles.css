@@ -36,6 +36,7 @@ header {
   transition: all 0.45s ease;
 }
 .logo {
+  padding-left: 50px;
   max-height: 80px;
 }
 span {
