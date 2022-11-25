@@ -510,6 +510,9 @@ form textarea {
   #menu-icon {
     display: block;
   }
+  .logo {
+    padding-left: 0%;
+  }
   .navlist {
     position: absolute;
     top: -1000px;
