@@ -79,7 +79,7 @@ section {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url(../img/background2.avif);
+  background-image: url(/img/background.avif);
   background-size: cover;
   background-position: center;
   display: flex;
