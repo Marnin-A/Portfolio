@@ -64,8 +64,12 @@ export default function Intro() {
 			>
 				<span className="font-bold">Hello, I'm Marnin.</span> I'm a{" "}
 				<span className="font-bold">Frontend developer</span> with{" "}
-				<span className="font-bold">2 years</span> of experience. I enjoy
-				building <span className="italic">sites & apps</span>. My focus is{" "}
+				<span className="font-bold">
+					{new Date().getFullYear() - new Date("10/01/2022").getFullYear()}{" "}
+					years
+				</span>{" "}
+				of experience. I enjoy building{" "}
+				<span className="italic">sites & apps</span>. My focus is{" "}
 				<span className="underline">React (Next.js)</span>.
 			</motion.h1>
 
