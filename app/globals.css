@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
+@theme {
+  --color-blueprint-bg: #1e40af; /* Deep Blue, tweak to match design */
+  --color-blueprint-grid: rgba(255, 255, 255, 0.15);
+  --color-blueprint-text: #ffffff;
+  --color-blueprint-accent: #60a5fa; /* Lighter blue for highlights */
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #1e40af;
+  --foreground: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Blueprint Grid Pattern */
+.blueprint-grid {
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, var(--color-blueprint-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-blueprint-grid) 1px, transparent 1px);
+}
+
+.blueprint-grid-lg {
+  background-size: 150px 150px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.25) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 2px, transparent 2px);
 }
