@@ -23,7 +23,7 @@ export default function Home() {
            <div className="absolute hidden sm:block top-8 left-1/2 -translate-x-1/2 flex flex-col items-start border-l border-blue-400/50 pl-2">
               <span className="text-[10px] font-mono text-white/80">100</span>
               <div className="text-xs font-bold text-white tracking-widest">WHATBYTES</div>
-              <div className="text-[10px] text-blue-300">Jan 2025-Present</div>
+              <div className="text-[10px] text-blue-300">Nov 2024-Present</div>
               <div className="text-[10px] text-white/80">SOFTWARE DEVELOPER</div>
            </div>
 
