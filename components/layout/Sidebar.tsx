@@ -17,7 +17,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-12 pointer-events-none md:pointer-events-auto">
+    <nav className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-12 pointer-events-none md:pointer-events-auto">
       {/* Navigation Container - Visual only on desktop usually, but we make it functional */}
       <div className="flex flex-col gap-4 p-2 border border-blue-400/30 rounded-full md:rounded-xl bg-[#1e40af]/80 backdrop-blur-md w-16 md:w-20 items-center pointer-events-auto">
         {navItems.map((item) => {

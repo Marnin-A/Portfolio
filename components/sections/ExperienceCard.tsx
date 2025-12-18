@@ -27,9 +27,6 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
       className="relative"
     >
       {/* Connector Line (Horizontal Trace) */}
-      <div className="absolute top-1/2 right-full h-[2px] w-8 md:w-16 bg-blue-500/30 -translate-y-1/2">
-        <div className="absolute right-0 top-1/2 h-2 w-2 rounded-full bg-blue-400/50 -translate-y-1/2 translate-x-1/2"></div>
-      </div>
 
       <BlueprintCard className="w-full max-w-xl group-hover:bg-[#1e40af]/30 mx-auto">
         <div className="flex items-start gap-4">

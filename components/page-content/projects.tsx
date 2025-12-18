@@ -42,7 +42,7 @@ export default function ProjectsContent() {
     const activeProject = projects.find(p => p.id === activeId) || projects[0];
 
     return (
-        <div className="min-h-screen py-8 md:py-0 md:h-screen w-full flex flex-col md:flex-row overflow-hidden bg-[#0f172a]">
+        <div className="min-h-screen py-8 md:py-0 md:h-screen w-full flex flex-col md:flex-row overflow-hidden bg-[#0f172a] pb-24 md:pb-0">
             
             {/* Left Column: Preview Area (60%) */}
             <div className="w-full md:w-[60%] h-[40vh] md:h-full relative overflow-hidden bg-[#1e40af]/10 border-r border-blue-500/20">
@@ -65,7 +65,7 @@ export default function ProjectsContent() {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/40 to-transparent"></div>
                         
                         {/* Content Overlay */}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 z-10 pl-20 md:pl-32"> {/* Increased padding for sidebar */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-16 z-10 pl-6 md:pl-32"> {/* Increased padding for sidebar */}
                             <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -74,7 +74,7 @@ export default function ProjectsContent() {
                                 <div className="text-blue-400 font-mono text-xs mb-2 tracking-widest uppercase">
                                     Project Details // {activeProject.category}
                                 </div>
-                                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight flex items-center gap-4">
+                                <h2 className="text-2xl md:text-5xl font-bold text-white mb-2 md:mb-4 tracking-tight flex items-center gap-4">
                                     {activeProject.title}
                                     {activeProject.maintenance && (
                                         <motion.span 
@@ -108,9 +108,9 @@ export default function ProjectsContent() {
             </div>
 
             {/* Right Column: List (40%) */}
-            <div className="w-full md:w-[40%] h-full flex flex-col pt-16 md:pt-32 relative z-20">
-                <div className="px-8 md:px-12 mb-8 flex justify-between items-end border-b border-blue-500/20 pb-4 mx-8 md:mx-0">
-                    <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter uppercase">Work</h1>
+            <div className="w-full md:w-[40%] h-full flex flex-col pt-8 md:pt-32 relative z-20">
+                <div className="px-6 md:px-12 mb-4 md:mb-8 flex justify-between items-end border-b border-blue-500/20 pb-4 mx-6 md:mx-0">
+                    <h1 className="text-3xl md:text-6xl font-bold text-white tracking-tighter uppercase">Projects</h1>
                     <span className="text-blue-400 font-mono text-xl">{projects.length}</span>
                 </div>
 
@@ -138,8 +138,9 @@ export default function ProjectsContent() {
                         {projects.map((project) => (
                             <div
                                 key={project.id}
+                                onClick={() => setActiveId(project.id)}
                                 onMouseEnter={() => setActiveId(project.id)}
-                                className={`group relative py-8 px-8 md:px-12 cursor-pointer border-b border-blue-500/10 transition-all duration-300 ${
+                                className={`group relative py-6 md:py-8 px-6 md:px-12 cursor-pointer border-b border-blue-500/10 transition-all duration-300 ${
                                     activeId === project.id ? "bg-blue-900/10" : "hover:bg-blue-900/5"
                                 }`}
                             >
@@ -149,8 +150,11 @@ export default function ProjectsContent() {
                                     }`}>
                                         {project.title.toLowerCase()}
                                         {project.maintenance && (
-                                            <span className="px-1.5 py-0.5 text-[8px] font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40 rounded uppercase">
-                                                <Construction/>
+                                            <span 
+                                                title="Currently undergoing maintenance"
+                                                className="px-1.5 py-0.5 text-[8px] font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40 rounded uppercase cursor-help"
+                                            >
+                                                <Construction size={12} />
                                             </span>
                                         )}
                                     </h3>

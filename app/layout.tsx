@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
+import MobileNav from "@/components/layout/MobileNav";
 import Navbar from "@/components/ui/Navbar";
 import GridBackground from "@/components/ui/GridBackground";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <GridBackground />
         <Sidebar />
+        <MobileNav />
         <Navbar />
         <main className="flex-1 w-full relative z-10 overflow-x-hidden">
           {children}

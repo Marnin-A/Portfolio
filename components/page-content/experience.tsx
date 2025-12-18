@@ -7,13 +7,13 @@ import { GraduationCap } from "lucide-react";
 
 export default function ExperienceContent() {
     return (
-        <div className="min-h-screen py-8 md:py-16 overflow-hidden pl-20 md:pl-32 pr-4 md:pr-12">
+        <div className="min-h-screen py-8 md:py-16 overflow-hidden pl-4 md:pl-32 pr-4 md:pr-12 last:pb-24">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="mb-12 border-b border-blue-500/30 pb-4"
+        className="mb-8 md:mb-12 border-b border-blue-500/30 pb-4"
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-white tracking-widest uppercase">
+        <h1 className="text-2xl md:text-4xl font-bold text-white tracking-widest uppercase">
           Career Blueprint
         </h1>
         <div className="flex justify-between items-end mt-2">
@@ -24,7 +24,7 @@ export default function ExperienceContent() {
         </div>
       </motion.div>
 
-      <div className="flex flex-col xl:flex-row gap-12 relative">
+      <div className="flex flex-col xl:flex-row gap-8 md:gap-12 relative">
         {/* Main "Bus" Line for visual connection */}
          <div className="hidden xl:block absolute left-[30%] top-20 bottom-0 w-[2px] bg-blue-500/20"></div>
 
@@ -57,13 +57,17 @@ export default function ExperienceContent() {
         </div>
 
         {/* Right Column: Professional Experience */}
-        <div className="xl:w-2/3 space-y-12 relative">
+        <div className="w-full xl:w-2/3 space-y-12 relative">
            {/* Section Label */}
-           <div className=" text-blue-300 text-center text-sm font-mono tracking-[0.5em] whitespace-nowrap hidden xl:block origin-center">
-              PROFESSIONAL EXPERIENCE
-           </div>
+            <div className=" text-blue-300 text-center text-sm font-mono tracking-[0.5em] whitespace-nowrap hidden xl:block origin-center">
+               PROFESSIONAL EXPERIENCE
+            </div>
+            
+            <div className="text-blue-300 text-sm font-mono tracking-[0.2em] uppercase mb-4 xl:hidden">
+                Professional Experience
+            </div>
 
-           <div className="space-y-6 md:pl-8 border-l border-blue-500/20 xl:border-none">
+            <div className="space-y-6 md:pl-8 border-l border-blue-500/20 xl:border-none">
              {experiences.map((exp, index) => (
                <ExperienceCard key={exp.id} experience={exp} index={index} />
              ))}

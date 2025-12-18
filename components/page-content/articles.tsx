@@ -13,13 +13,13 @@ const icons = {
 
 export default function ArticlesContent() {
     return (
-       <div className="min-h-screen py-8 md:py-16 pl-20 md:pl-32 pr-4 md:pr-12">
+       <div className="min-h-screen py-8 md:py-16 pl-4 md:pl-32 pr-4 md:pr-12 pb-24">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-12 border-b border-blue-500/30 pb-4"
+        className="mb-8 md:mb-12 border-b border-blue-500/30 pb-4"
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-white tracking-widest uppercase">
+        <h1 className="text-2xl md:text-4xl font-bold text-white tracking-widest uppercase">
           Technical Logs (Articles)
         </h1>
         <div className="flex justify-between items-end mt-2">
