@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronUp, ChevronDown, AlertTriangle, Construction } from "lucide-react";
 import { projects } from "@/lib/data";
+import Link from "next/link";
 
 export default function ProjectsContent() {
     const [activeId, setActiveId] = useState(projects[0].id);
@@ -42,7 +43,7 @@ export default function ProjectsContent() {
     const activeProject = projects.find(p => p.id === activeId) || projects[0];
 
     return (
-        <div className="min-h-screen py-8 md:py-0 md:h-screen w-full flex flex-col md:flex-row overflow-hidden bg-[#0f172a] pb-24 md:pb-0">
+        <div className="min-h-screen py-8 md:py-0 md:h-screen w-full flex flex-col md:flex-row overflow-hidden bg-[#0f172a] pb-24 pt-0 md:pb-0">
             
             {/* Left Column: Preview Area (60%) */}
             <div className="w-full md:w-[60%] h-[40vh] md:h-full relative overflow-hidden bg-[#1e40af]/10 border-r border-blue-500/20">
@@ -136,7 +137,9 @@ export default function ProjectsContent() {
                     >
                         <div className="flex flex-col">
                         {projects.map((project) => (
-                            <div
+                            <Link
+                                href={project.website}
+                                target="_blank"
                                 key={project.id}
                                 onClick={() => setActiveId(project.id)}
                                 onMouseEnter={() => setActiveId(project.id)}
@@ -183,7 +186,7 @@ export default function ProjectsContent() {
                                         className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500"
                                     />
                                 )}
-                            </div>
+                            </Link>
                         ))}
                         </div>
                     </div>
