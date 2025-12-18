@@ -116,8 +116,10 @@ export default function Home() {
               <div>• 40% abandon sites taking 3s+ to load</div>
            </div>
 
+        </div>
+
            {/* Social Media - Bottom Right */}
-           <div className="absolute bottom-8 right-12 flex gap-4 pointer-events-auto">
+           <div className="absolute -bottom-12 md:bottom-8 right-12 flex gap-4 pointer-events-auto">
               <a href="https://github.com/Marnin-A" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-white transition-colors">
                 <span className="sr-only">GitHub</span>
                 <Github/>
@@ -135,8 +137,6 @@ export default function Home() {
                 <Twitter/>
               </a>
            </div>
-
-        </div>
       </motion.div>
     </div>
   );
