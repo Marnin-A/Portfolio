@@ -1,14 +1,8 @@
 import { motion } from "framer-motion";
 import BlueprintCard from "@/components/ui/BlueprintCard";
-import { Cloud, Cpu, Disc, Keyboard, Plane } from "lucide-react";
-
-const icons = {
-  Cloud: Cloud,
-  Drone: Plane, // Closest match
-  Keyboard: Keyboard,
-  Cpu: Cpu,
-  Disc: Disc,
-};
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRightIcon } from "lucide-react";
 
 interface ExperienceCardProps {
   experience: {
@@ -18,12 +12,12 @@ interface ExperienceCardProps {
     dates: string;
     description: string[];
     icon: string;
+    website: string;
   };
   index: number;
 }
 
 export default function ExperienceCard({ experience, index }: ExperienceCardProps) {
-  const Icon = icons[experience.icon as keyof typeof icons] || Disc;
 
   return (
     <motion.div
@@ -37,10 +31,10 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
         <div className="absolute right-0 top-1/2 h-2 w-2 rounded-full bg-blue-400/50 -translate-y-1/2 translate-x-1/2"></div>
       </div>
 
-      <BlueprintCard className="w-full max-w-xl group-hover:bg-[#1e40af]/30">
+      <BlueprintCard className="w-full max-w-xl group-hover:bg-[#1e40af]/30 mx-auto">
         <div className="flex items-start gap-4">
-          <div className="p-3 border border-blue-500/30 rounded-lg bg-blue-900/40 shrinking-0">
-            <Icon className="text-blue-300 w-6 h-6 md:w-8 md:h-8" />
+          <div className="border border-blue-500/30 overflow-hidden rounded-lg bg-blue-900/40 shrinking-0">
+            <Image src={experience.icon} alt={experience.company} className="text-blue-300 w-6 h-6 md:w-8 md:h-8" height={24} width={24}/>
           </div>
           <div className="flex-1 space-y-1">
             <div className="flex justify-between items-start flex-wrap gap-2">
@@ -64,7 +58,16 @@ export default function ExperienceCard({ experience, index }: ExperienceCardProp
                  ))}
                </ul>
             </div>
+         <div className="flex justify-end">
+           {experience.website && <Link href={experience.website} target="_blank" rel="noopener noreferrer">
+              <span className="w-max flex items-center gap-2 text-xs font-mono text-blue-300 border border-blue-500/30 px-2 py-1 rounded">
+                Website
+              <ArrowUpRightIcon className="w-4 h-4 text-blue-300"/>
+              </span>
+            </Link>}
+         </div>
           </div>
+         
         </div>
       </BlueprintCard>
     </motion.div>

@@ -33,3 +33,14 @@ body {
     linear-gradient(to right, rgba(255, 255, 255, 0.25) 2px, transparent 2px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 2px, transparent 2px);
 }
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+

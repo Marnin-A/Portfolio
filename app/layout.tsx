@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
+import Navbar from "@/components/ui/Navbar";
 import GridBackground from "@/components/ui/GridBackground";
 
 const geistSans = Geist({
@@ -31,7 +32,8 @@ export default function RootLayout({
       >
         <GridBackground />
         <Sidebar />
-        <main className="flex-1 ml-20 md:ml-64 p-8 md:p-12 relative z-10 overflow-x-hidden">
+        <Navbar />
+        <main className="flex-1 w-full relative z-10 overflow-x-hidden">
           {children}
         </main>
       </body>
