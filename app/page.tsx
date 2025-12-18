@@ -99,7 +99,7 @@ export default function Home() {
            </div>
 
            {/* Footer */}
-           <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-[999999]">
+           <div className="absolute hidden md:block -bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center z-[999999]">
               <span className="text-xs font-mono text-white/50 tracking-widest">HOME PAGE LAYOUT - SCALE 1:1</span>
            </div>
            
