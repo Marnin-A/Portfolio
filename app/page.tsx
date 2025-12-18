@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import BlueprintCard from "@/components/ui/BlueprintCard";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export default function Home() {
@@ -67,7 +66,7 @@ export default function Home() {
                          src="/profile.png" 
                          alt="Marnin Audu" 
                          fill 
-                         className="object-cover ml-[2%] mt-[2%]" 
+                         className="object-cover ml-[1%] mt-[1%]" 
                        />
                     </div>
                  </div>

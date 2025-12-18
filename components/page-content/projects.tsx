@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { ArrowRight, ChevronUp, ChevronDown, AlertTriangle, Construction } from "lucide-react";
 import { projects } from "@/lib/data";
 import Link from "next/link";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Button } from "../ui/button";
 
 export default function ProjectsContent() {
     const [activeId, setActiveId] = useState(projects[0].id);
@@ -153,12 +155,15 @@ export default function ProjectsContent() {
                                     }`}>
                                         {project.title.toLowerCase()}
                                         {project.maintenance && (
-                                            <span 
-                                                title="Currently undergoing maintenance"
-                                                className="px-1.5 py-0.5 text-[8px] font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40 rounded uppercase cursor-help"
-                                            >
-                                                <Construction size={12} />
-                                            </span>
+                                            <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline" className="px-1.5 py-0.5 text-[8px] font-mono bg-amber-500/20 text-amber-400 border border-amber-500/40 rounded uppercase cursor-help"><Construction size={12} /></Button>
+      </TooltipTrigger>
+      <TooltipContent>
+                                            Currently undergoing maintenance
+                                                
+                                            </TooltipContent>
+                                            </Tooltip>
                                         )}
                                     </h3>
                                     
