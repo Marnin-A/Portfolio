@@ -76,7 +76,7 @@ export const projects: Array<Project> = [
     category: "Full Stack",
     
     role: "FullStack Developer",
-    stack: ["NEXT.js", "Linux VM", "PostgreSQL"],
+    stack: ["NEXT.js", "Linux VM", "MongoDB", "FastAPI", "Docker"],
     description: "End-to-end full-stack application deployed on Linux VMs. Handles UI-to-Database workflows with persistent monitoring and automated deployment pipelines.",
     features: ["Production-ready full-stack app", "UI to backend and database", "Linux VM deployment & monitoring"],
     image: "/nexdiscovery.jpg",
