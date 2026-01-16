@@ -95,7 +95,7 @@ export const projects: Array<Project> = [
     image: "/skysec.jpg",
     icon: Shield,
     website: "https://skysecglobal.com",
-    maintenance: true
+    maintenance: false
   },
   {
     id: 3,
